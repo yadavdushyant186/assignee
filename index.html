@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignee — Independent Academic & Presentation Studio for College Students</title>
+  <meta name="description" content="Fast, confidential academic assignments and presentation design for college students. ₹120/page, ₹80/slide, ₹60/revision. 80% advance escrow, 100% refund guarantee.">
+
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              accent: '#06b6d4',
+              teal: '#14b8a6'
+            }
+          },
+          boxShadow: {
+            'glow-indigo': '0 0 35px -5px rgba(99, 102, 241, 0.35)',
+            'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.35)',
+            'glow-card': '0 10px 40px -10px rgba(0, 0, 0, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #080c15; }
+    ::-webkit-scrollbar-thumb { background: #26334d; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3b4d70; }
+
+    /* Glass Effect */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+
+<body class="bg-[#080c15] text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Ambient Radiant Lighting Backdrops -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[450px] bg-brand-600/20 rounded-full blur-[140px]"></div>
+    <div class="absolute top-1/3 -left-32 w-[500px] h-[400px] bg-brand-accent/12 rounded-full blur-[140px]"></div>
+    <div class="absolute bottom-10 right-0 w-[550px] h-[450px] bg-brand-700/15 rounded-full blur-[150px]"></div>
+  </div>
+
+  <!-- STICKY TOP NAVBAR -->
+  <header class="relative z-30 border-b border-slate-800/80 bg-[#080c15]/85 backdrop-blur-xl sticky top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-brand-accent flex items-center justify-center shadow-glow-indigo group-hover:scale-105 transition-all duration-300">
+          <i data-lucide="check-check" class="w-6 h-6 text-white stroke-[2.5]"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-2xl tracking-tight text-white flex items-center gap-1.5">
+            Assignee<span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
+          </span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Academic & PPT Studio</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-300">
+        <a href="#calculator" class="hover:text-brand-300 transition-colors">Cost Calculator</a>
+        <a href="#how-it-works" class="hover:text-brand-300 transition-colors">How It Works</a>
+        <a href="#samples" class="hover:text-brand-300 transition-colors">Work Samples</a>
+        <a href="#guarantees" class="hover:text-brand-300 transition-colors">Our Guarantee</a>
+        <a href="#faq" class="hover:text-brand-300 transition-colors">FAQs</a>
+      </nav>
+
+      <!-- CTA Buttons & Admin Desk -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- Admin Notification Desk Button -->
+        <button onclick="openAdminDrawer()" class="relative p-2 sm:px-3 sm:py-2 text-xs font-semibold rounded-xl border border-slate-700 hover:border-brand-accent/50 bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white transition-all flex items-center gap-1.5" title="Admin Notification Desk (Dushyant Yadav)">
+          <i data-lucide="bell" class="w-4 h-4 text-brand-accent"></i>
+          <span class="hidden sm:inline">Admin Desk</span>
+          <span id="admin-badge-count" class="hidden absolute -top-1.5 -right-1.5 min-w-[18px] h-[18px] px-1 rounded-full bg-rose-500 text-white font-bold text-[10px] flex items-center justify-center animate-bounce shadow-md">
+            0
+          </span>
+        </button>
+
+        <button onclick="openCreatorModal()" class="hidden md:inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold rounded-xl border border-slate-700 hover:border-brand-500/50 hover:bg-slate-800/80 text-slate-300 transition-all">
+          <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-brand-400"></i>
+          <span>Apply as Writer</span>
+        </button>
+
+        <a href="#calculator" class="inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-xs sm:text-sm shadow-glow-indigo transition-all transform hover:-translate-y-0.5">
+          <span>Get Quote</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main class="relative z-10">
+    <section class="pt-16 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+      
+      <!-- Top Trust Pill -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>100% Anonymous Delivery • Turnitin Verified • Flat ₹60 Revisions</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white max-w-4xl mx-auto leading-[1.12]">
+        Never Stress Over College Deadlines. <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-brand-accent to-indigo-200">Done Fast & Digitally.</span>
+      </h1>
+
+      <p class="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        Premium research assignments and designer slide decks crafted strictly to your syllabus rubric. Delivered directly to your inbox with zero awkward interactions.
+      </p>
+
+      <!-- Key Metrics Strip -->
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3.5 max-w-4xl mx-auto">
+        <div class="glass-card p-4 rounded-2xl">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-white">₹120</p>
+          <p class="text-xs text-slate-400 font-medium mt-1">Starting / Page (Text)</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-brand-accent">₹80</p>
+          <p class="text-xs text-slate-400 font-medium mt-1">Starting / Slide (PPT)</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-amber-400">₹60</p>
+          <p class="text-xs text-slate-400 font-medium mt-1">Flat Per Revision</p>
+        </div>
+        <div class="glass-card p-4 rounded-2xl">
+          <p class="font-display text-2xl sm:text-3xl font-extrabold text-emerald-400">80 / 20</p>
+          <p class="text-xs text-slate-400 font-medium mt-1">Fair Escrow Split</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE PRICING CALCULATOR SECTION -->
+    <section id="calculator" class="py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div class="relative p-1 rounded-3xl bg-gradient-to-b from-brand-500/30 via-slate-800/40 to-slate-900/60 shadow-2xl">
+        <div class="bg-slate-900/95 backdrop-blur-2xl rounded-[22px] p-6 sm:p-10 border border-slate-800">
+          
+          <div class="text-center max-w-xl mx-auto mb-8">
+            <span class="text-brand-accent font-bold text-xs tracking-wider uppercase">Transparent Pricing Engine</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-1">Instant Cost Calculator</h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-2">No hidden surprises. Calculate your exact quote in 5 seconds.</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Left Side: Configurator -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- 1. Service Type Selector -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2.5">
+                  1. What service do you need?
+                </label>
+                <div class="grid grid-cols-2 gap-3">
+                  <button type="button" id="btn-type-assignment" onclick="setServiceType('assignment')" 
+                          class="p-4 rounded-2xl border-2 border-brand-500 bg-brand-500/10 text-left transition-all flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="file-text" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-white">Text Assignment</p>
+                      <p class="text-xs text-brand-300 font-semibold mt-0.5">₹120 / page</p>
+                      <p class="text-[10px] text-slate-400 mt-1">180–200 words • 12pt font</p>
+                    </div>
+                  </button>
+
+                  <button type="button" id="btn-type-ppt" onclick="setServiceType('ppt')" 
+                          class="p-4 rounded-2xl border-2 border-slate-800 bg-slate-800/40 text-left transition-all hover:border-slate-700 flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-xl bg-slate-800 text-slate-400 flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="presentation" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-white">Slide Deck (PPT)</p>
+                      <p class="text-xs text-slate-400 font-semibold mt-0.5">₹80 / slide</p>
+                      <p class="text-[10px] text-slate-400 mt-1">Design, visuals & notes</p>
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- 2. Quantity Slider -->
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label id="quantity-label" class="text-xs font-bold uppercase tracking-wider text-slate-300">
+                    2. Number of Pages
+                  </label>
+                  <span id="quantity-badge" class="px-2.5 py-1 rounded-full bg-brand-500/20 border border-brand-500/30 text-brand-300 text-xs font-bold">
+                    4 Pages (~800 words)
+                  </span>
+                </div>
+                <div class="flex items-center gap-4">
+                  <input type="range" id="quantity-slider" min="2" max="40" value="4" 
+                         oninput="handleQuantityChange(this.value)" 
+                         class="w-full h-2.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
+                  <input type="number" id="quantity-number" min="2" max="50" value="4" 
+                         oninput="handleQuantityChange(this.value)" 
+                         class="w-16 px-2.5 py-1.5 rounded-xl bg-slate-800 border border-slate-700 text-white font-bold text-center text-sm focus:outline-none focus:border-brand-500">
+                </div>
+                <p id="word-estimate" class="text-[11px] text-slate-400 mt-1.5">
+                  Standard college format: 180–200 words per page, single spaced, 12pt font. (Min: 2 pages)
+                </p>
+              </div>
+
+              <!-- 3. Target Deadline Picker -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                  3. Your College Submission Deadline
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div>
+                    <label class="text-[11px] text-slate-400 block mb-1">Target Date</label>
+                    <input type="date" id="deadline-date" onchange="calculatePrice()" 
+                           class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white text-xs font-medium focus:outline-none focus:border-brand-500">
+                  </div>
+                  <div>
+                    <label class="text-[11px] text-slate-400 block mb-1">Target Time</label>
+                    <input type="time" id="deadline-time" value="20:00" onchange="calculatePrice()" 
+                           class="w-full px-3.5 py-2.5 rounded-xl bg-slate-800/90 border border-slate-700 text-white text-xs font-medium focus:outline-none focus:border-brand-500">
+                  </div>
+                </div>
+                <p class="text-[11px] text-slate-400 mt-2 flex items-center gap-1.5">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-accent"></i>
+                  <span>Guaranteed delivery to your email <strong>1–2 hours before</strong> this time.</span>
+                </p>
+              </div>
+
+              <!-- Rush Notice Alert Banner -->
+              <div id="rush-banner" class="hidden p-3.5 rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-300 text-xs flex items-start gap-2.5">
+                <i data-lucide="zap" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <span class="font-bold">⚡ Rush Order Active (1.5x Multiplier):</span>
+                  <span> Turnaround is under 20 hours for an extensive project. Priority creator assigned immediately.</span>
+                </div>
+              </div>
+
+              <!-- Deadline Error Banner -->
+              <div id="deadline-error" class="hidden p-3.5 rounded-xl border border-rose-500/40 bg-rose-500/10 text-rose-300 text-xs flex items-start gap-2.5">
+                <i data-lucide="alert-circle" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+                <div>
+                  <span id="deadline-error-title" class="font-bold">Deadline / Page limit exceeded:</span>
+                  <span id="deadline-error-msg"> Orders must be placed at least 2 days (48h) in advance.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Side: Order Summary Card -->
+            <div class="lg:col-span-5 bg-gradient-to-b from-slate-800/80 to-slate-900 border border-slate-700/80 rounded-2xl p-6 sm:p-7 flex flex-col justify-between h-full shadow-glow-card">
+              <div>
+                <div class="flex items-center justify-between border-b border-slate-700/60 pb-4 mb-4">
+                  <h3 class="font-display font-bold text-lg text-white">Live Price Breakdown</h3>
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 font-semibold flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Verified Rate
+                  </span>
+                </div>
+
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between text-slate-300">
+                    <span id="summary-item-label">Text Assignment (4 pgs)</span>
+                    <span id="summary-base-rate" class="font-medium text-white">₹480</span>
+                  </div>
+
+                  <div id="summary-rush-row" class="hidden flex justify-between text-amber-300">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                      <span>Urgency Multiplier (1.5x)</span>
+                    </span>
+                    <span id="summary-rush-amount" class="font-medium">+₹240</span>
+                  </div>
+
+                  <div class="flex justify-between text-slate-300">
+                    <span>Plagiarism & AI Check</span>
+                    <span class="text-emerald-400 font-medium">Free Included</span>
+                  </div>
+
+                  <div class="flex justify-between text-slate-300">
+                    <span>Revisions (Post-Delivery)</span>
+                    <span class="text-amber-400 font-medium">₹60 / revision</span>
+                  </div>
+                </div>
+
+                <!-- Total Amount Highlight -->
+                <div class="mt-6 pt-4 border-t border-slate-700/70">
+                  <div class="flex justify-between items-baseline mb-3">
+                    <span class="text-sm font-semibold text-slate-300">Total Price:</span>
+                    <span id="summary-total-price" class="font-display text-3xl font-extrabold text-white">₹480</span>
+                  </div>
+
+                  <!-- 80/20 Escrow Split Card -->
+                  <div class="bg-slate-950/70 rounded-xl p-3.5 border border-slate-800 space-y-2 text-xs">
+                    <div class="flex justify-between items-center text-slate-300">
+                      <span class="flex items-center gap-1.5 text-brand-300 font-semibold">
+                        <i data-lucide="arrow-down-circle" class="w-4 h-4 text-brand-accent"></i>
+                        80% Advance (Pay AFTER Acceptance):
+                      </span>
+                      <span id="summary-advance-price" class="font-bold text-white text-sm">₹384</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-400">
+                      <span class="flex items-center gap-1.5">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                        20% Balance Upon Delivery:
+                      </span>
+                      <span id="summary-balance-price" class="font-medium text-slate-300">₹96</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Proceed Button -->
+              <div class="mt-6">
+                <button type="button" id="btn-proceed" onclick="openOrderModal()" 
+                        class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-sm shadow-glow-indigo flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Submit Order for Admin Acceptance</span>
+                </button>
+                <p class="text-[11px] text-center text-slate-400 mt-2">
+                  ⚡ <strong>Zero Upfront Payment.</strong> Admin reviews your brief & accepts on WhatsApp first!
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE WORK SAMPLES & PROOF OF QUALITY -->
+    <section id="samples" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-brand-accent font-bold text-xs tracking-wider uppercase">Authentic University Samples</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-1">Real Assignments & PPTs We Deliver</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">
+          Browse actual excerpts formatted according to top university rubrics. Every order is 100% original, Turnitin-verified, and citation-accurate.
+        </p>
+
+        <!-- Sample Category Filter Tabs -->
+        <div class="flex flex-wrap justify-center gap-2.5 mt-6">
+          <button onclick="switchSampleCategory('ppt-business')" id="sample-tab-ppt-business" 
+                  class="px-4 py-2 rounded-xl text-xs font-bold border border-brand-500 bg-brand-500/20 text-brand-300 transition-all flex items-center gap-1.5 shadow-glow-indigo">
+            <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
+            <span>PPT 1: Quick-Commerce Strategy (MBA)</span>
+          </button>
+          <button onclick="switchSampleCategory('ppt-tech')" id="sample-tab-ppt-tech" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-1.5">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>PPT 2: Edge AI & IoT (B.Tech)</span>
+          </button>
+          <button onclick="switchSampleCategory('text-econ')" id="sample-tab-text-econ" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-1.5">
+            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+            <span>Report 1: Macroeconomics & Repo Rates</span>
+          </button>
+          <button onclick="switchSampleCategory('text-ev')" id="sample-tab-text-ev" 
+                  class="px-4 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-1.5">
+            <i data-lucide="file-check" class="w-3.5 h-3.5"></i>
+            <span>Report 2: Solid-State Battery Tech</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SAMPLES DISPLAY CONTAINER -->
+      <div class="max-w-5xl mx-auto">
+        
+        <!-- SAMPLE 1: Business PPT (Interactive Slide Deck) -->
+        <div id="sample-card-ppt-business" class="sample-card glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-brand-accent/20 text-brand-accent text-[11px] font-bold">
+                  PowerPoint (.pptx) • 10 Slides Deck
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Blinkit_Zepto_Growth_Strategy.pptx</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1">Topic: Unit Economics & Hyperlocal Logistics in Indian Quick-Commerce</h3>
+              <p class="text-xs text-slate-400">Stream: MBA Marketing & Supply Chain • Standard 16:9 Widescreen</p>
+            </div>
+            <!-- Slide Counter & Nav -->
+            <div class="flex items-center gap-2 self-end sm:self-auto">
+              <span id="biz-slide-num" class="text-xs font-mono font-bold text-brand-300 px-3 py-1 rounded-lg bg-slate-800 border border-slate-700">Slide 1 of 4</span>
+              <button onclick="prevBizSlide()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              </button>
+              <button onclick="nextBizSlide()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Slide Visual Stage -->
+          <div class="mt-6 aspect-video bg-gradient-to-br from-[#0c1222] via-[#0f172a] to-[#1e1b4b] rounded-2xl border border-slate-700/60 p-6 sm:p-10 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            
+            <!-- Slide Content 1: Title Slide -->
+            <div id="biz-slide-1" class="biz-slide-panel h-full flex flex-col justify-center space-y-4">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold w-max border border-indigo-500/30">
+                <span>Case Study & Competitive Deck</span>
+              </div>
+              <h4 class="font-display font-extrabold text-2xl sm:text-4xl text-white tracking-tight leading-tight">
+                Winning the 10-Minute Cart: Dark Store Economics & Customer Churn
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 max-w-xl">
+                A granular assessment of contribution margins, delivery partner density, and cross-merchandising across Tier-1 Indian metros.
+              </p>
+              <div class="pt-4 flex items-center gap-6 text-xs text-slate-400 font-mono border-t border-slate-800">
+                <span>Presenter: Team Assignee Research</span>
+                <span>Module: Strategic Management (PGDM)</span>
+              </div>
+            </div>
+
+            <!-- Slide Content 2: Metrics Dashboard -->
+            <div id="biz-slide-2" class="biz-slide-panel hidden h-full flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-accent">Slide 04 • Micro-Fulfillment Metrics</p>
+                <h4 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">Dark Store Unit Economics per 1,000 sq.ft Hub</h4>
+              </div>
+              <div class="grid grid-cols-3 gap-3 my-4">
+                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <p class="text-[10px] text-slate-400 uppercase font-semibold">Average Order Value</p>
+                  <p class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">₹485</p>
+                  <p class="text-[10px] text-emerald-400 mt-1">↑ 18% YoY via FMCG packs</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <p class="text-[10px] text-slate-400 uppercase font-semibold">Delivery Time Avg</p>
+                  <p class="font-display text-2xl sm:text-3xl font-bold text-brand-accent mt-1">9.4 min</p>
+                  <p class="text-[10px] text-slate-400 mt-1">Within 1.8km radius</p>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700">
+                  <p class="text-[10px] text-slate-400 uppercase font-semibold">Order Contribution Margin</p>
+                  <p class="font-display text-2xl sm:text-3xl font-bold text-emerald-400 mt-1">+₹14.2</p>
+                  <p class="text-[10px] text-emerald-400 mt-1">Breakeven at 1,200 orders/day</p>
+                </div>
+              </div>
+              <p class="text-[11px] text-slate-400 italic bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+                Key takeaway: Dark stores achieve EBITDA positive status by Day 90 once SKU density exceeds 4,200 unique consumer items.
+              </p>
+            </div>
+
+            <!-- Slide Content 3: Competitive Matrix -->
+            <div id="biz-slide-3" class="biz-slide-panel hidden h-full flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-brand-accent">Slide 07 • Market Comparison</p>
+                <h4 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">Competitive Matrix: Blinkit vs Zepto vs Swiggy Instamart</h4>
+              </div>
+              <div class="overflow-x-auto my-3">
+                <table class="w-full text-left text-xs border border-slate-800 rounded-lg overflow-hidden">
+                  <thead class="bg-slate-800/90 text-slate-300 text-[10px] uppercase font-bold">
+                    <tr>
+                      <th class="p-2.5">Platform</th>
+                      <th class="p-2.5">Dark Stores</th>
+                      <th class="p-2.5">Take Rate</th>
+                      <th class="p-2.5">Ad Revenue %</th>
+                      <th class="p-2.5">Retention Rate (M3)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-800 text-slate-300">
+                    <tr class="bg-slate-900/40">
+                      <td class="p-2.5 font-bold text-white">Blinkit (Zomato)</td>
+                      <td class="p-2.5">639 Hubs</td>
+                      <td class="p-2.5 text-emerald-400 font-semibold">19.8%</td>
+                      <td class="p-2.5">3.4% of GOV</td>
+                      <td class="p-2.5">64%</td>
+                    </tr>
+                    <tr class="bg-slate-900/60">
+                      <td class="p-2.5 font-bold text-white">Zepto</td>
+                      <td class="p-2.5">450+ Hubs</td>
+                      <td class="p-2.5 text-emerald-400 font-semibold">18.2%</td>
+                      <td class="p-2.5">2.8% of GOV</td>
+                      <td class="p-2.5">61%</td>
+                    </tr>
+                    <tr class="bg-slate-900/40">
+                      <td class="p-2.5 font-bold text-white">Instamart</td>
+                      <td class="p-2.5">580 Hubs</td>
+                      <td class="p-2.5 text-amber-400 font-semibold">17.5%</td>
+                      <td class="p-2.5">2.2% of GOV</td>
+                      <td class="p-2.5">58%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-[11px] text-slate-400 italic">Source: Company earnings filings, Redseer Consulting, Bernstein Research.</p>
+            </div>
+
+            <!-- Slide Content 4: Speaker Notes & Strategic Recs -->
+            <div id="biz-slide-4" class="biz-slide-panel hidden h-full flex flex-col justify-between">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-emerald-400">Slide 10 • Conclusion & Recommendations</p>
+                <h4 class="font-display font-bold text-xl sm:text-2xl text-white mt-1">Strategic Roadmap: The Path to ₹10,000 Cr Valuation</h4>
+              </div>
+              <div class="grid grid-cols-2 gap-3 my-2 text-xs">
+                <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-1">
+                  <p class="font-bold text-brand-300">1. Private Label Integration</p>
+                  <p class="text-[11px] text-slate-400">Expand margins by 450 bps by replacing third-party staples with high-yield in-house brands.</p>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/80 space-y-1">
+                  <p class="font-bold text-brand-accent">2. Pharmacy & Tech Electronics</p>
+                  <p class="text-[11px] text-slate-400">Increase basket size above ₹800 by delivering cables, headphones, and OTC medicines in 15 mins.</p>
+                </div>
+              </div>
+              <!-- Presenter Notes Box -->
+              <div class="p-3 rounded-xl bg-indigo-950/40 border border-indigo-800/50 text-[11px] text-indigo-200">
+                <span class="font-bold uppercase tracking-wider text-[9px] text-brand-accent block">Live Presenter Script (Included with PPT):</span>
+                "When presenting slide 10 to professors, emphasize that advertising revenue from CPG brands is the true secret behind quick commerce profitability, not delivery fees."
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Meta Bar -->
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
+            <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+              <i data-lucide="check" class="w-4 h-4"></i> Complete Slide Deck with Custom Diagrams & Speaker Script
+            </span>
+            <button onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})" class="text-brand-300 hover:text-white font-bold underline">
+              Order a PPT like this (₹80/slide) →
+            </button>
+          </div>
+        </div>
+
+        <!-- SAMPLE 2: Tech PPT (Edge AI) -->
+        <div id="sample-card-ppt-tech" class="sample-card hidden glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 text-[11px] font-bold">
+                  PowerPoint (.pptx) • 8 Slides Deck
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Edge_AI_Distributed_Computing.pptx</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1">Topic: Federated Learning Architectures on Resource-Constrained IoT Nodes</h3>
+              <p class="text-xs text-slate-400">Stream: Computer Science & AI (B.Tech / M.Tech) • IEEE Benchmark Design</p>
+            </div>
+          </div>
+
+          <!-- Slide Preview Area -->
+          <div class="mt-6 aspect-video bg-gradient-to-br from-[#060e1a] to-[#0d1e38] rounded-2xl border border-cyan-800/40 p-6 sm:p-10 flex flex-col justify-between shadow-2xl">
+            <div>
+              <span class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 text-xs font-semibold border border-cyan-500/30">
+                System Topology & Pipeline
+              </span>
+              <h4 class="font-display font-bold text-xl sm:text-3xl text-white mt-3">
+                Decentralized SGD vs Centralized Parameter Aggregation
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 mt-2 max-w-xl">
+                Mitigating communication bottlenecks through 8-bit quantization and differential privacy noise perturbation ($\epsilon = 1.2$).
+              </p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 my-2 text-xs">
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <p class="text-cyan-400 font-bold">Bandwidth Saved</p>
+                <p class="text-2xl font-display font-bold text-white mt-1">74.6%</p>
+                <p class="text-[10px] text-slate-400 mt-1">Using FedProx aggregation</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <p class="text-emerald-400 font-bold">Inference Latency</p>
+                <p class="text-2xl font-display font-bold text-white mt-1">14.2 ms</p>
+                <p class="text-[10px] text-slate-400 mt-1">On ARM Cortex-M55</p>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                <p class="text-purple-400 font-bold">Accuracy Tradeoff</p>
+                <p class="text-2xl font-display font-bold text-white mt-1">&lt; 0.8%</p>
+                <p class="text-[10px] text-slate-400 mt-1">Over 50 federated rounds</p>
+              </div>
+            </div>
+
+            <div class="p-2.5 rounded-lg bg-black/40 border border-slate-800 text-[10px] text-slate-400 font-mono">
+              Formula: $\theta_{t+1} = \theta_t - \eta \sum_{k=1}^K \frac{n_k}{N} \nabla F_k(\theta_t) + \mathcal{N}(0, \sigma^2)$
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-800">
+            <span class="text-cyan-400 font-semibold">✓ Includes high-definition vector topology diagrams & speaker notes</span>
+            <button onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})" class="text-brand-300 hover:text-white font-bold underline">
+              Order Technical PPT (₹80/slide) →
+            </button>
+          </div>
+        </div>
+
+        <!-- SAMPLE 3: Economics Research Report (Text Assignment) -->
+        <div id="sample-card-text-econ" class="sample-card hidden glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold">
+                  Text Assignment (.docx + .pdf) • 12 Pages
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Macroeconomics_RBI_Repo_Report.docx</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1">Topic: Impact of Monetary Tightening & Repo Rate Fluctuations on Retail Mortgages</h3>
+              <p class="text-xs text-slate-400">Stream: B.A. / B.Com / M.Sc Economics • Format: APA 7th Edition (12pt Times New Roman, Single Spaced)</p>
+            </div>
+            <div class="px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold shrink-0">
+              Turnitin Similarity: 1.8%
+            </div>
+          </div>
+
+          <!-- Academic Paper Sheet View -->
+          <div class="mt-6 bg-[#0c121e] rounded-2xl border border-slate-800 p-6 sm:p-8 font-serif text-slate-300 text-xs sm:text-sm space-y-4 shadow-inner max-h-[420px] overflow-y-auto">
+            <div class="text-center pb-4 border-b border-slate-800 font-sans">
+              <h4 class="font-bold text-base text-white">An Empirical Investigation into the Monetary Transmission Mechanism: Analyzing Floating Home Loan Elasticity Post-2022 Repo Hikes in India</h4>
+              <p class="text-slate-400 text-xs mt-1">Submitted for Academic Assessment • Department of Applied Economics</p>
+            </div>
+
+            <div>
+              <h5 class="font-sans font-bold text-white text-xs uppercase tracking-wider text-brand-accent">1. Abstract</h5>
+              <p class="leading-relaxed mt-1 text-slate-300 text-xs">
+                This study examines the degree of pass-through efficiency from the Reserve Bank of India’s 250 bps policy repo rate hikes (commencing May 2022) to external benchmark lending rates (EBLR) tied to floating-rate residential retail loans. Utilizing quarterly balance sheet microdata from six scheduled commercial banks, we apply a vector error correction model (VECM) to estimate the speed of transmission and subsequent elasticity in housing credit absorption across Tier-1 urban nodes. Findings indicate an asymmetric pass-through elasticity coefficient of $\beta = 0.89$ within 45 days, substantially suppressing loan inquiries in the sub-₹50 Lakh affordable housing bracket by 24.3%.
+              </p>
+            </div>
+
+            <div>
+              <h5 class="font-sans font-bold text-white text-xs uppercase tracking-wider text-brand-accent">2. Literature Review & Theoretical Synthesis</h5>
+              <p class="leading-relaxed mt-1 text-slate-300 text-xs">
+                Traditional Keynesian interest rate channel models (Bernanke & Gertler, 1995) posit that policy rate adjustments alter the real cost of borrowing, reducing capital investment and durable goods consumption. In India, the structural transition from the Marginal Cost of Funds based Lending Rate (MCLR) to EBLR mandates direct statutory linkage to the repo rate (Acharya, 2020). Consequently, unlike previous monetary cycles where transmission suffered structural lags of 6 to 9 months, current transmission exhibits instantaneous repricing...
+              </p>
+            </div>
+
+            <div>
+              <h5 class="font-sans font-bold text-white text-xs uppercase tracking-wider text-brand-accent">3. Empirical Econometric Specification</h5>
+              <div class="p-3 bg-black/40 rounded-lg font-mono text-[11px] text-slate-300 border border-slate-800 my-2">
+                $$\Delta \ln(\text{HousingCredit}_t) = \alpha_0 + \sum_{i=1}^p \beta_i \Delta \text{Repo}_{t-i} + \gamma_1 \Delta \ln(\text{CPI}_t) + \delta_1 \text{EC}_{t-1} + \varepsilon_t$$
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-sans flex justify-between">
+              <span>Word Count: 2,380 Words</span>
+              <span>18 Peer-Reviewed References (APA 7th)</span>
+              <span class="text-emerald-400 font-semibold">Zero AI Hallucination Guaranteed</span>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-800">
+            <span class="text-emerald-400 font-semibold">✓ Delivered in editable .docx & print-ready .pdf</span>
+            <button onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})" class="text-brand-300 hover:text-white font-bold underline">
+              Order a Research Paper (₹120/page) →
+            </button>
+          </div>
+        </div>
+
+        <!-- SAMPLE 4: Engineering Report (Solid-State Batteries) -->
+        <div id="sample-card-text-ev" class="sample-card hidden glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-400 text-[11px] font-bold">
+                  Technical Project Report • 8 Pages
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Solid_State_EV_Battery_Analysis.docx</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mt-1">Topic: Solid-State Electrolytes vs Traditional LFP in Tropical Climatic Conditions</h3>
+              <p class="text-xs text-slate-400">Stream: Mechanical / Electrical / Automotive Engineering • IEEE Formatting Style</p>
+            </div>
+            <div class="px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xs font-bold shrink-0">
+              Turnitin Similarity: 2.1%
+            </div>
+          </div>
+
+          <div class="mt-6 bg-[#0c121e] rounded-2xl border border-slate-800 p-6 sm:p-8 font-mono text-slate-300 text-xs space-y-4 max-h-[420px] overflow-y-auto">
+            <div class="text-center pb-3 border-b border-slate-800 font-sans">
+              <h4 class="font-bold text-white text-base">Comparative Thermal Runway Risk & Gravimetric Energy Densities in Ceramic-Based All-Solid-State Batteries (ASSB)</h4>
+              <p class="text-slate-400 text-xs mt-1">IEEE Transactions on Sustainable Energy Project Rubric</p>
+            </div>
+
+            <div class="space-y-2">
+              <p class="text-brand-accent font-bold font-sans uppercase text-[11px]">I. Introduction & Chemical Composition</p>
+              <p class="leading-relaxed text-slate-300">
+                Liquid organic solvent electrolytes in conventional Lithium Nickel Manganese Cobalt (NMC) and Lithium Iron Phosphate ($LiFePO_4$) configurations exhibit catastrophic exothermic failure above 60°C due to flammable volatile vapors. In contrast, substituting liquid electrolytes with sulfidic ($Li_{10}GeP_2S_{12}$) or garnet-type oxide ($Li_7La_3Zr_2O_{12}$) solid ionic conductors broadens the electrochemical stability window beyond 5.0 V vs. $Li/Li^+$.
+              </p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 text-[11px] space-y-1">
+              <p class="text-white font-bold">Table 1: Thermal & Volumetric Parameters Comparison</p>
+              <div class="grid grid-cols-3 gap-2 pt-2 text-[10px]">
+                <div>
+                  <span class="text-slate-400 block">Metric</span>
+                  <strong class="text-slate-200">Gravimetric Density</strong>
+                  <strong class="text-slate-200">Operating Temp</strong>
+                  <strong class="text-slate-200">Dendrite Resistance</strong>
+                </div>
+                <div>
+                  <span class="text-slate-400 block">LFP (Standard)</span>
+                  <span class="text-amber-400">160–185 Wh/kg</span>
+                  <span class="text-slate-300">-20°C to +55°C</span>
+                  <span class="text-rose-400">Moderate</span>
+                </div>
+                <div>
+                  <span class="text-slate-400 block">Solid-State (ASSB)</span>
+                  <span class="text-emerald-400">350–420 Wh/kg</span>
+                  <span class="text-slate-300">-40°C to +110°C</span>
+                  <span class="text-emerald-400">High (LLZO barrier)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400 font-sans flex justify-between">
+              <span>Word Count: 1,650 Words (8 Pages)</span>
+              <span>12 IEEE Formatted Citations</span>
+              <span class="text-purple-400 font-semibold">Includes Circuit & Cell Diagrams</span>
+            </div>
+          </div>
+
+          <div class="mt-4 flex items-center justify-between text-xs text-slate-400 pt-3 border-t border-slate-800">
+            <span class="text-purple-400 font-semibold">✓ Plagiarism verified & formatted to exact college rubrics</span>
+            <button onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})" class="text-brand-300 hover:text-white font-bold underline">
+              Order Technical Report (₹120/page) →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4-STEP HOW IT WORKS -->
+    <section id="how-it-works" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-brand-accent font-bold text-xs tracking-wider uppercase">Frictionless Workflow</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white mt-1">How Assignee Works</h2>
+        <p class="text-slate-400 mt-2 text-xs sm:text-sm">Centralized, anonymous, and managed from order to final delivery.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+        
+        <div class="glass-card p-6 rounded-2xl relative group hover:border-brand-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-brand-500/15 border border-brand-500/30 text-brand-400 flex items-center justify-center font-display font-extrabold text-sm mb-4">
+            01
+          </div>
+          <h3 class="font-bold text-base text-white mb-1.5">Submit Brief (Free)</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Provide your topic, pages or slides, deadline (min 2 days notice), and your WhatsApp number. Zero upfront payment.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl relative group hover:border-brand-accent/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-brand-accent/15 border border-brand-accent/30 text-brand-accent flex items-center justify-center font-display font-extrabold text-sm mb-4">
+            02
+          </div>
+          <h3 class="font-bold text-base text-white mb-1.5">Admin Acceptance</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Admin reviews your brief and messages you directly on WhatsApp to confirm availability and accept the task.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl relative group hover:border-emerald-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-display font-extrabold text-sm mb-4">
+            03
+          </div>
+          <h3 class="font-bold text-base text-white mb-1.5">Pay 80% Advance</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Once Admin accepts, you transfer the 80% advance via UPI QR. Work starts immediately with a vetted specialist.
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl relative group hover:border-purple-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/15 border border-purple-500/30 text-purple-400 flex items-center justify-center font-display font-extrabold text-sm mb-4">
+            04
+          </div>
+          <h3 class="font-bold text-base text-white mb-1.5">Delivery & 20% Balance</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Your plagiarism-checked files are emailed <strong>1–2 hours before</strong> deadline. Settle final 20% balance via UPI.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GUARANTEES -->
+    <section id="guarantees" class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950/40 to-slate-900 border border-slate-800 p-8 sm:p-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="badge-percent" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-sm sm:text-base">100% Refund Guarantee</h3>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                If we fail to deliver before your agreed deadline, you get an immediate 100% refund. We only accept orders when creator capacity is confirmed.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
+              <i data-lucide="shield-alert" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-sm sm:text-base">Zero Plagiarism Audit</h3>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                Every text assignment is verified through Turnitin and AI detection tools before being released to your email inbox.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+              <i data-lucide="user-x" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-white text-sm sm:text-base">100% Anonymous Cloak</h3>
+              <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                Writers never see your name, phone number, or college identity. All files and instructions are sanitized and routed privately.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <span class="text-brand-accent font-bold text-xs tracking-wider uppercase">Answers & Clarifications</span>
+        <h2 class="font-display text-3xl font-bold text-white mt-1">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-3.5 text-xs sm:text-sm">
+        
+        <details class="group p-5 rounded-2xl glass-card transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center cursor-pointer text-white font-semibold">
+            <span>What are the charges for revisions?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="mt-3 text-xs text-slate-400 leading-relaxed">
+            Revisions are charged at a flat nominal fee of <strong>₹60 every time</strong> a revision request is made. This covers dedicated creator time to modify arguments, add supplementary points, or reformat slides strictly to your instructor's feedback.
+          </p>
+        </details>
+
+        <details class="group p-5 rounded-2xl glass-card transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center cursor-pointer text-white font-semibold">
+            <span>What if my assignment needs a specific citation style (APA, IEEE, Harvard)?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="mt-3 text-xs text-slate-400 leading-relaxed">
+            Simply mention the citation style in the "Guidelines / Special Instructions" box when placing your order. Our writers adhere strictly to the guidelines and rubric provided in your initial brief.
+          </p>
+        </details>
+
+        <details class="group p-5 rounded-2xl glass-card transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center cursor-pointer text-white font-semibold">
+            <span>What are the deliverable file formats?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="mt-3 text-xs text-slate-400 leading-relaxed">
+            For text assignments, you receive both an editable Microsoft Word document (<code>.docx</code>) and a clean <code>.pdf</code>. For presentations, you receive an editable PowerPoint file (<code>.pptx</code>) or Canva link.
+          </p>
+        </details>
+
+        <details class="group p-5 rounded-2xl glass-card transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center cursor-pointer text-white font-semibold">
+            <span>Why is there an 80% advance payment?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="mt-3 text-xs text-slate-400 leading-relaxed">
+            Because our creators begin drafting immediately upon assignment, the 80% advance locks in their time exclusively for your project. The remaining 20% is paid when the completed deliverable is in your inbox.
+          </p>
+        </details>
+
+        <details class="group p-5 rounded-2xl glass-card transition-all [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex justify-between items-center cursor-pointer text-white font-semibold">
+            <span>What is the minimum notice period for an urgent order?</span>
+            <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400 transition-transform group-open:rotate-180"></i>
+          </summary>
+          <p class="mt-3 text-xs text-slate-400 leading-relaxed">
+            Standard tasks require at least 20 hours notice. For shorter tasks (4–5 pages), we can accept rush orders down to an absolute strict minimum of 4 hours. Orders under 4 hours are automatically rejected to preserve quality.
+          </p>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ORDER & UPI CHECKOUT MODAL -->
+  <div id="order-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-xl bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
+      
+      <!-- Close Button -->
+      <button onclick="closeOrderModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800/60">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="mb-5">
+        <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Step 1: Submit Brief for Admin Review (Free)
+        </span>
+        <h3 class="font-display text-2xl font-bold text-white mt-1">Review & Acceptance Request</h3>
+        <p class="text-xs text-slate-400 mt-1">No upfront payment now. Admin reviews your brief & accepts on WhatsApp first.</p>
+      </div>
+
+      <form id="order-form" onsubmit="handleOrderSubmission(event)" class="space-y-4 text-xs">
+        
+        <!-- Order Spec Summary Pill -->
+        <div class="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60 flex justify-between items-center text-xs">
+          <div>
+            <p id="modal-service-name" class="font-bold text-white text-sm">Text Assignment (4 Pages)</p>
+            <p id="modal-deadline-text" class="text-slate-400 text-[11px] mt-0.5">Deadline: In 3 Days at 20:00</p>
+          </div>
+          <div class="text-right">
+            <p class="text-slate-400 text-[10px]">80% Advance (Pay Later)</p>
+            <p id="modal-advance-due" class="font-display font-extrabold text-base text-brand-300">₹384</p>
+          </div>
+        </div>
+
+        <!-- How Approval Works Banner -->
+        <div class="p-3 rounded-xl bg-indigo-950/50 border border-indigo-800/60 text-indigo-200 text-xs space-y-1">
+          <p class="font-bold flex items-center gap-1 text-white">
+            <i data-lucide="message-square" class="w-3.5 h-3.5 text-brand-accent"></i>
+            <span>All Coordination Done on WhatsApp:</span>
+          </p>
+          <p class="text-[11px] text-slate-300 leading-relaxed">
+            1. Submit your details below $\rightarrow$ 2. Admin checks schedule & messages you on WhatsApp to <strong>Accept</strong> $\rightarrow$ 3. You pay the 80% advance via UPI only after acceptance $\rightarrow$ 4. We email the completed files 1–2h before your deadline!
+          </p>
+        </div>
+
+        <!-- Inputs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Your Full Name *</label>
+            <input type="text" id="cust-name" required placeholder="e.g. Aryan Sharma" 
+                   class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">WhatsApp Phone Number *</label>
+            <input type="tel" id="cust-phone" required placeholder="e.g. 9876543210" 
+                   class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+            <p class="text-[10px] text-slate-400 mt-0.5">Admin will message you here with acceptance & draft updates.</p>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Email Address (For File Delivery) *</label>
+          <input type="email" id="cust-email" required placeholder="your.email@college.edu" 
+                 class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+          <p class="text-[10px] text-slate-400 mt-0.5">Final Word document (.docx) and PDF will be sent here.</p>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Assignment / PPT Main Topic *</label>
+          <input type="text" id="cust-topic" required placeholder="e.g. Comparative Analysis of Renewable Energy Policies" 
+                 class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1 flex items-center justify-between">
+            <span>Subtopics & Key Points to Cover *</span>
+            <span class="text-[10px] text-brand-300 font-normal">Chapters, headings, or questions</span>
+          </label>
+          <textarea id="cust-subtopics" rows="2" required placeholder="e.g. 1. Introduction & Background, 2. Global vs Indian Trends, 3. SWOT Analysis, 4. Case Study, 5. Conclusion" 
+                    class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 focus:outline-none focus:border-brand-500"></textarea>
+          <p class="text-[10px] text-slate-400 mt-0.5">List the key subtopics, sections, or slides you want covered.</p>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Guidelines, Rubric, Questions or Google Drive Link</label>
+          <textarea id="cust-notes" rows="2" placeholder="Paste questions, citation instructions, or Google Drive link..." 
+                    class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500"></textarea>
+        </div>
+
+        <!-- PAYMENT INFO BANNER (POST-ACCEPTANCE) -->
+        <div class="p-3.5 rounded-2xl bg-slate-950/80 border border-slate-800 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="text-xs">
+            <p class="font-bold text-white">Payment Policy: Zero Upfront Today</p>
+            <p class="text-[11px] text-slate-400">
+              The 80% advance (<span id="modal-payment-amount" class="text-brand-300 font-bold">₹384</span>) is only paid via UPI <strong>after</strong> Admin confirms and accepts your order on WhatsApp.
+            </p>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full mt-2 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 hover:from-brand-500 hover:to-brand-400 text-white font-bold text-sm shadow-glow-indigo flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Send Brief to Admin via WhatsApp for Approval</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- WRITER / CREATOR APPLICATION MODAL -->
+  <div id="creator-modal" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+    <div class="relative w-full max-w-lg bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl my-8">
+      
+      <button onclick="closeCreatorModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-slate-800/60">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-5">
+        <span class="text-xs uppercase font-bold text-brand-accent tracking-wider">Earn In College</span>
+        <h3 class="font-display text-2xl font-bold text-white mt-1">Apply as an Assignee Creator</h3>
+        <p class="text-xs text-slate-400 mt-1">Get paid for making PPTs or writing reports. Strict quality vetting required.</p>
+      </div>
+
+      <form id="creator-form" onsubmit="handleCreatorApplication(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Full Name *</label>
+          <input type="text" id="cr-name" required placeholder="Your full name" class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">College / University *</label>
+            <input type="text" id="cr-college" required placeholder="e.g. DU, IIT, IPU" class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1">Degree & Year *</label>
+            <input type="text" id="cr-year" required placeholder="e.g. B.Tech 3rd Yr" class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">WhatsApp Number *</label>
+          <input type="tel" id="cr-phone" required placeholder="10-digit number" class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+        </div>
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Primary Skill Set *</label>
+          <select id="cr-skill" class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+            <option value="Both PPT & Text Assignments">Both PPT Design & Text Writing</option>
+            <option value="PPT Presentation Specialist">PPT Presentation Specialist (PowerPoint/Canva)</option>
+            <option value="Academic Report Writer">Academic Essay & Report Writer</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1">Google Drive Link of Sample Work (PPT or Essays) *</label>
+          <input type="url" id="cr-sample" required placeholder="https://drive.google.com/..." class="w-full px-3 py-2.5 rounded-xl bg-slate-800 border border-slate-700 text-white focus:outline-none focus:border-brand-500">
+          <p class="text-[10px] text-slate-400 mt-1">Make sure link permissions are set to "Anyone with the link can view".</p>
+        </div>
+
+        <button type="submit" class="w-full mt-2 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-glow-indigo flex items-center justify-center gap-2">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Submit Application via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FLOATING ADMIN LIVE NOTIFICATION BANNER -->
+  <div id="admin-live-banner" class="fixed top-6 right-6 z-50 hidden max-w-md w-full bg-slate-900/95 border-2 border-brand-500 rounded-2xl p-4 shadow-2xl backdrop-blur-xl">
+    <div class="flex items-start gap-3">
+      <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-300 flex items-center justify-center shrink-0">
+        <i data-lucide="bell-ring" class="w-5 h-5 text-amber-400 animate-pulse"></i>
+      </div>
+      <div class="flex-1">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">🚨 New Order Received!</span>
+          <button onclick="dismissAdminBanner()" class="text-slate-400 hover:text-white p-0.5">
+            <i data-lucide="x" class="w-4 h-4"></i>
+          </button>
+        </div>
+        <p id="admin-banner-text" class="text-xs text-white font-bold mt-1">Aryan Sharma: Text Assignment (₹480)</p>
+        <p id="admin-banner-sub" class="text-[11px] text-slate-300 mt-0.5">Topic: Macroeconomics & Repo Rates</p>
+        <div class="mt-3 flex items-center gap-2">
+          <button onclick="openAdminDrawer(); dismissAdminBanner();" class="px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-bold text-xs shadow-glow-indigo">
+            Review & Decide Now
+          </button>
+          <button onclick="dismissAdminBanner()" class="px-3 py-1.5 rounded-lg bg-slate-800 text-slate-300 text-xs">
+            Dismiss
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN REVIEW & NOTIFICATIONS DRAWER -->
+  <div id="admin-drawer" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-end">
+    <div class="relative w-full max-w-2xl bg-slate-900 border-l border-slate-800 h-full p-6 sm:p-8 shadow-2xl flex flex-col justify-between overflow-y-auto">
+      
+      <div>
+        <!-- Drawer Header -->
+        <div class="flex items-start justify-between pb-5 border-b border-slate-800 mb-6">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-xs font-mono uppercase font-bold text-brand-accent tracking-wider">Founder & Admin Console</span>
+            </div>
+            <h3 class="font-display text-2xl font-bold text-white mt-1">Order Review Desk</h3>
+            <p class="text-xs text-slate-400 mt-1">
+              Admin: <strong class="text-white">Dushyant Yadav</strong> • WhatsApp: <code class="text-brand-300 font-bold">+91 9772223152</code>
+            </p>
+          </div>
+          <button onclick="closeAdminDrawer()" class="text-slate-400 hover:text-white p-2 rounded-xl bg-slate-800/60">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <!-- Filter / Stats Tabs -->
+        <div class="grid grid-cols-3 gap-3 mb-6 text-xs">
+          <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+            <p class="text-slate-400 text-[10px] uppercase font-bold">Pending Review</p>
+            <p id="stat-pending-count" class="font-display font-bold text-2xl text-amber-400 mt-0.5">0</p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+            <p class="text-slate-400 text-[10px] uppercase font-bold">Accepted Orders</p>
+            <p id="stat-accepted-count" class="font-display font-bold text-2xl text-emerald-400 mt-0.5">0</p>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/60">
+            <p class="text-slate-400 text-[10px] uppercase font-bold">Live Audio Chime</p>
+            <button onclick="toggleAudioChime()" id="btn-sound-toggle" class="text-xs font-bold text-emerald-400 mt-1 flex items-center gap-1">
+              <i data-lucide="volume-2" class="w-4 h-4"></i> Active (ON)
+            </button>
+          </div>
+        </div>
+
+        <!-- Live Orders List -->
+        <div class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Order Acceptance Queue</h4>
+            <div class="flex items-center gap-2">
+              <button onclick="simulateTestOrder()" class="px-2.5 py-1 rounded-lg bg-brand-500/20 text-brand-300 hover:bg-brand-500/30 text-[11px] font-semibold border border-brand-500/30 transition-all flex items-center gap-1">
+                <i data-lucide="bell" class="w-3 h-3"></i> Simulate Order
+              </button>
+              <button onclick="clearOrdersHistory()" class="text-[11px] text-slate-500 hover:text-rose-400 transition-colors">Clear</button>
+            </div>
+          </div>
+
+          <div id="admin-orders-list" class="space-y-3.5">
+            <!-- Dynamically populated via JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Info -->
+      <div class="pt-6 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
+        <span>🔔 Real-time in-app notification engine enabled</span>
+        <button onclick="requestDesktopNotification()" class="text-brand-300 hover:underline">Enable Browser Alerts</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-slate-800/80 bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+          <i data-lucide="check-check" class="w-4 h-4"></i>
+        </div>
+        <span class="font-display font-bold text-white text-base">Assignee</span>
+        <span class="text-slate-600">|</span>
+        <span>Independent Academic Formatting & Presentation Design Studio</span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="#calculator" class="hover:text-white transition-colors">Pricing</a>
+        <a href="#how-it-works" class="hover:text-white transition-colors">Process</a>
+        <a href="#guarantees" class="hover:text-white transition-colors">Refund Policy</a>
+        <button onclick="openCreatorModal()" class="hover:text-brand-300 transition-colors">Join as Writer</button>
+      </div>
+
+      <p>© <span id="current-year">2026</span> Assignee. All rights reserved. Independent student assistance studio.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    const CONFIG = {
+      ADMIN_NAME: "Dushyant Yadav",
+      ADMIN_PHONE: "9772223152",
+      PAGE_RATE: 120,          // ₹120 per page for text assignments
+      SLIDE_RATE: 80,          // ₹80 per slide for PPT
+      REVISION_RATE: 60,       // ₹60 flat every time a revision is requested
+      MIN_PAGES: 2,            // Minimum 2 pages for text assignments
+      MIN_SLIDES: 3,           // Minimum 3 slides for PPT
+      RUSH_MULTIPLIER: 1.5,    // 1.5x for rush orders
+      RUSH_THRESHOLD_HOURS: 20,// Under 20 hours triggers rush
+      MIN_NOTICE_HOURS: 4,     // Strict minimum notice: 4 hours
+      ADVANCE_RATIO: 0.80,     // 80% upfront
+      UPI_ID: "9772223152@paytm", // Dushyant Yadav's UPI ID
+      WHATSAPP_NUMBER: "919772223152" // Dushyant Yadav (+91 9772223152)
+    };
+
+    let state = {
+      serviceType: 'assignment',
+      quantity: 4,
+      totalPrice: 480,
+      advancePrice: 384,
+      balancePrice: 96,
+      isRush: false,
+      isValidDeadline: true,
+      deadlineFormatted: ""
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      const minDate = new Date();
+      minDate.setDate(minDate.getDate() + 2);
+      const minYyyy = minDate.getFullYear();
+      const minMm = String(minDate.getMonth() + 1).padStart(2, '0');
+      const minDd = String(minDate.getDate()).padStart(2, '0');
+      document.getElementById('deadline-date').min = `${minYyyy}-${minMm}-${minDd}`;
+
+      const defaultDate = new Date();
+      defaultDate.setDate(defaultDate.getDate() + 3);
+      const defYyyy = defaultDate.getFullYear();
+      const defMm = String(defaultDate.getMonth() + 1).padStart(2, '0');
+      const defDd = String(defaultDate.getDate()).padStart(2, '0');
+      document.getElementById('deadline-date').value = `${defYyyy}-${defMm}-${defDd}`;
+
+      calculatePrice();
+      renderAdminOrders();
+    });
+
+    function setServiceType(type) {
+      state.serviceType = type;
+      const btnAssignment = document.getElementById('btn-type-assignment');
+      const btnPpt = document.getElementById('btn-type-ppt');
+      const quantityLabel = document.getElementById('quantity-label');
+      const wordEstimate = document.getElementById('word-estimate');
+      const slider = document.getElementById('quantity-slider');
+      const numberInput = document.getElementById('quantity-number');
+
+      if (type === 'assignment') {
+        btnAssignment.className = 'p-4 rounded-2xl border-2 border-brand-500 bg-brand-500/10 text-left transition-all flex items-start gap-3';
+        btnPpt.className = 'p-4 rounded-2xl border-2 border-slate-800 bg-slate-800/40 text-left transition-all hover:border-slate-700 flex items-start gap-3';
+        quantityLabel.textContent = '2. Number of Pages';
+        wordEstimate.textContent = 'Standard college format: 180–200 words per page, single spaced, 12pt font. (Min: 2 pages)';
+        slider.min = CONFIG.MIN_PAGES;
+        numberInput.min = CONFIG.MIN_PAGES;
+        if (state.quantity < CONFIG.MIN_PAGES) state.quantity = CONFIG.MIN_PAGES;
+      } else {
+        btnPpt.className = 'p-4 rounded-2xl border-2 border-brand-500 bg-brand-500/10 text-left transition-all flex items-start gap-3';
+        btnAssignment.className = 'p-4 rounded-2xl border-2 border-slate-800 bg-slate-800/40 text-left transition-all hover:border-slate-700 flex items-start gap-3';
+        quantityLabel.textContent = '2. Number of Slides';
+        wordEstimate.textContent = 'Includes research, visual slide design, high-res graphics, and presenter notes. (Min: 3 slides)';
+        slider.min = CONFIG.MIN_SLIDES;
+        numberInput.min = CONFIG.MIN_SLIDES;
+        if (state.quantity < CONFIG.MIN_SLIDES) state.quantity = CONFIG.MIN_SLIDES;
+      }
+
+      handleQuantityChange(state.quantity);
+    }
+
+    function handleQuantityChange(val) {
+      const minAllowed = state.serviceType === 'assignment' ? CONFIG.MIN_PAGES : CONFIG.MIN_SLIDES;
+      val = parseInt(val) || minAllowed;
+      if (val < minAllowed) val = minAllowed;
+      state.quantity = val;
+
+      document.getElementById('quantity-slider').value = val;
+      document.getElementById('quantity-number').value = val;
+
+      const badge = document.getElementById('quantity-badge');
+      if (state.serviceType === 'assignment') {
+        const estWords = val * 200;
+        badge.textContent = `${val} Pages (~${estWords} words)`;
+      } else {
+        badge.textContent = `${val} Presentation Slides`;
+      }
+
+      calculatePrice();
+    }
+
+    function calculatePrice() {
+      const dateVal = document.getElementById('deadline-date').value;
+      const timeVal = document.getElementById('deadline-time').value;
+
+      let hoursDifference = 72;
+      if (dateVal && timeVal) {
+        const targetDateTime = new Date(`${dateVal}T${timeVal}`);
+        const now = new Date();
+        const diffMs = targetDateTime - now;
+        hoursDifference = diffMs / (1000 * 60 * 60);
+      }
+
+      const rushBanner = document.getElementById('rush-banner');
+      const deadlineError = document.getElementById('deadline-error');
+      const deadlineErrorTitle = document.getElementById('deadline-error-title');
+      const deadlineErrorMsg = document.getElementById('deadline-error-msg');
+      const btnProceed = document.getElementById('btn-proceed');
+
+      const daysDiff = hoursDifference / 24;
+      let isBlocked = false;
+      let blockTitle = "";
+      let blockMsg = "";
+
+      // Rule 1: Strict minimum notice of 2 days (48 hours)
+      if (hoursDifference < 48) {
+        isBlocked = true;
+        blockTitle = "Minimum 2 Days Advance Notice Required:";
+        blockMsg = " All orders must be booked at least 2 days (48 hours) before your college submission date.";
+      }
+      // Rule 2: More than 5 pages will not be accepted for completing in 2 days
+      else if (daysDiff <= 2.3 && state.serviceType === 'assignment' && state.quantity > 5) {
+        isBlocked = true;
+        blockTitle = "Page Limit Exceeded for 2-Day Delivery:";
+        blockMsg = " More than 5 pages cannot be accepted for completing in 2 days. Please extend your deadline to 3+ days or reduce pages.";
+      }
+      // Rule 3: More than 3 pages will not be accepted for completing in 3 days as text
+      else if (daysDiff <= 3.3 && state.serviceType === 'assignment' && state.quantity > 3) {
+        isBlocked = true;
+        blockTitle = "Page Limit Exceeded for 3-Day Delivery:";
+        blockMsg = " More than 3 pages will not be accepted for completing in 3 days as text. For larger assignments, please select a deadline with more time.";
+      }
+
+      if (isBlocked) {
+        state.isValidDeadline = false;
+        if (deadlineErrorTitle) deadlineErrorTitle.textContent = blockTitle;
+        if (deadlineErrorMsg) deadlineErrorMsg.textContent = blockMsg;
+        deadlineError.classList.remove('hidden');
+        rushBanner.classList.add('hidden');
+        btnProceed.disabled = true;
+        btnProceed.classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        state.isValidDeadline = true;
+        deadlineError.classList.add('hidden');
+        btnProceed.disabled = false;
+        btnProceed.classList.remove('opacity-50', 'cursor-not-allowed');
+
+        // Rush indicator for priority 2-day turnaround
+        if (daysDiff <= 2.5) {
+          state.isRush = true;
+          rushBanner.classList.remove('hidden');
+        } else {
+          state.isRush = false;
+          rushBanner.classList.add('hidden');
+        }
+      }
+
+      const rate = state.serviceType === 'assignment' ? CONFIG.PAGE_RATE : CONFIG.SLIDE_RATE;
+      const baseCost = state.quantity * rate;
+      const multiplier = state.isRush ? 1.5 : 1.0;
+      const total = Math.round(baseCost * multiplier);
+      const advance = Math.round(total * CONFIG.ADVANCE_RATIO);
+      const balance = total - advance;
+
+      state.totalPrice = total;
+      state.advancePrice = advance;
+      state.balancePrice = balance;
+
+      const unitName = state.serviceType === 'assignment' ? 'pgs' : 'slides';
+      const label = state.serviceType === 'assignment' ? 'Text Assignment' : 'PPT Slide Deck';
+      
+      document.getElementById('summary-item-label').textContent = `${label} (${state.quantity} ${unitName})`;
+      document.getElementById('summary-base-rate').textContent = `₹${baseCost}`;
+
+      const rushRow = document.getElementById('summary-rush-row');
+      if (state.isRush) {
+        rushRow.classList.remove('hidden');
+        document.getElementById('summary-rush-amount').textContent = `+₹${total - baseCost}`;
+      } else {
+        rushRow.classList.add('hidden');
+      }
+
+      document.getElementById('summary-total-price').textContent = `₹${total}`;
+      document.getElementById('summary-advance-price').textContent = `₹${advance}`;
+      document.getElementById('summary-balance-price').textContent = `₹${balance}`;
+
+      if (dateVal && timeVal) {
+        const d = new Date(`${dateVal}T${timeVal}`);
+        state.deadlineFormatted = d.toLocaleString('en-IN', { 
+          day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' 
+        });
+      }
+    }
+
+    function openOrderModal() {
+      if (!state.isValidDeadline) return;
+      calculatePrice();
+
+      const unitName = state.serviceType === 'assignment' ? 'Pages' : 'Slides';
+      const title = state.serviceType === 'assignment' ? 'Text Assignment' : 'Slide Deck (PPT)';
+
+      document.getElementById('modal-service-name').textContent = `${title} (${state.quantity} ${unitName})`;
+      document.getElementById('modal-deadline-text').textContent = `Target Deadline: ${state.deadlineFormatted}`;
+      document.getElementById('modal-advance-due').textContent = `₹${state.advancePrice}`;
+      const modalPayAmt = document.getElementById('modal-payment-amount');
+      if (modalPayAmt) modalPayAmt.textContent = `₹${state.advancePrice}`;
+
+      document.getElementById('order-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeOrderModal() {
+      document.getElementById('order-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // --- ADMIN NOTIFICATION & ORDER MANAGEMENT ENGINE ---
+    const ORDERS_STORAGE_KEY = 'assignee_orders_v1';
+    let soundEnabled = true;
+
+    function toggleAudioChime() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('btn-sound-toggle');
+      if (btn) {
+        btn.innerHTML = soundEnabled
+          ? '<i data-lucide="volume-2" class="w-4 h-4"></i> Active (ON)'
+          : '<i data-lucide="volume-x" class="w-4 h-4 text-slate-500"></i> Muted (OFF)';
+        btn.className = soundEnabled
+          ? 'text-xs font-bold text-emerald-400 mt-1 flex items-center gap-1'
+          : 'text-xs font-bold text-slate-400 mt-1 flex items-center gap-1';
+        lucide.createIcons();
+      }
+    }
+
+    function playNotificationChime() {
+      if (!soundEnabled) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+        
+        const now = ctx.currentTime;
+        // Tone 1: High crisp ding (D5 -> A5)
+        const osc1 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        osc1.type = 'sine';
+        osc1.frequency.setValueAtTime(587.33, now);
+        osc1.frequency.exponentialRampToValueAtTime(880, now + 0.12);
+        gain1.gain.setValueAtTime(0.35, now);
+        gain1.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc1.connect(gain1);
+        gain1.connect(ctx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.5);
+
+        // Tone 2: Harmonious resonance (D6)
+        setTimeout(() => {
+          try {
+            const osc2 = ctx.createOscillator();
+            const gain2 = ctx.createGain();
+            osc2.type = 'triangle';
+            osc2.frequency.setValueAtTime(1174.66, ctx.currentTime);
+            gain2.gain.setValueAtTime(0.28, ctx.currentTime);
+            gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.65);
+            osc2.connect(gain2);
+            gain2.connect(ctx.destination);
+            osc2.start();
+            osc2.stop(ctx.currentTime + 0.65);
+          } catch(e) {}
+        }, 130);
+      } catch (err) {
+        console.warn('Audio notice:', err);
+      }
+    }
+
+    function getStoredOrders() {
+      try {
+        const raw = localStorage.getItem(ORDERS_STORAGE_KEY);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {
+        console.error(e);
+      }
+      // Seed initial pending order so Admin Dushyant Yadav can test immediately
+      const sample = [
+        {
+          id: 'ORD-98214',
+          name: 'Aryan Sharma',
+          phone: '9876543210',
+          email: 'aryan.sharma@du.ac.in',
+          topic: 'Impact of RBI Repo Rate Changes on Retail Mortgages',
+          subtopics: '1. Abstract & Transmission Mechanism\n2. Literature Review (MCLR vs EBLR)\n3. Empirical Econometric Model (VECM)\n4. Affordable Housing Elasticity Findings',
+          notes: 'Follow APA 7th edition formatting, 12pt Times New Roman. Need Turnitin report under 10%.',
+          service: 'Text Assignment',
+          quantity: 4,
+          unit: 'pages',
+          total: 480,
+          advance: 384,
+          deadline: 'In 3 Days at 20:00',
+          date: 'Today',
+          timestamp: 'Just now',
+          status: 'PENDING'
+        }
+      ];
+      localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(sample));
+      return sample;
+    }
+
+    function saveStoredOrders(orders) {
+      try {
+        localStorage.setItem(ORDERS_STORAGE_KEY, JSON.stringify(orders));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function clearOrdersHistory() {
+      if (confirm("Clear all orders from local history?")) {
+        localStorage.removeItem(ORDERS_STORAGE_KEY);
+        renderAdminOrders();
+      }
+    }
+
+    function renderAdminOrders() {
+      const orders = getStoredOrders();
+      const listEl = document.getElementById('admin-orders-list');
+      const statPending = document.getElementById('stat-pending-count');
+      const statAccepted = document.getElementById('stat-accepted-count');
+      const badgeCount = document.getElementById('admin-badge-count');
+
+      const pendingOrders = orders.filter(o => o.status === 'PENDING');
+      const acceptedOrders = orders.filter(o => o.status === 'ACCEPTED');
+
+      if (statPending) statPending.textContent = pendingOrders.length;
+      if (statAccepted) statAccepted.textContent = acceptedOrders.length;
+
+      if (badgeCount) {
+        if (pendingOrders.length > 0) {
+          badgeCount.textContent = pendingOrders.length;
+          badgeCount.classList.remove('hidden');
+        } else {
+          badgeCount.classList.add('hidden');
+        }
+      }
+
+      if (!listEl) return;
+
+      if (orders.length === 0) {
+        listEl.innerHTML = `
+          <div class="p-8 text-center rounded-2xl bg-slate-800/40 border border-slate-800 text-slate-400">
+            <i data-lucide="inbox" class="w-8 h-8 mx-auto text-slate-500 mb-2"></i>
+            <p class="text-xs font-semibold">No orders currently in queue</p>
+            <p class="text-[11px] text-slate-500 mt-1">When a student submits an order, it will chime and appear here for your review.</p>
+            <button onclick="simulateTestOrder()" class="mt-3 px-3 py-1.5 rounded-xl bg-brand-600/30 hover:bg-brand-600/50 text-brand-300 text-xs font-bold transition-colors inline-flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Simulate an incoming order
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      listEl.innerHTML = orders.map(order => {
+        const isPending = order.status === 'PENDING';
+        const isAccepted = order.status === 'ACCEPTED';
+        const isDeclined = order.status === 'DECLINED';
+
+        let statusPill = '';
+        if (isPending) {
+          statusPill = `<span class="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 font-bold text-[10px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Action Required: Review Brief
+          </span>`;
+        } else if (isAccepted) {
+          statusPill = `<span class="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-[10px] flex items-center gap-1">
+            ✓ Accepted & Details Sent
+          </span>`;
+        } else {
+          statusPill = `<span class="px-2 py-0.5 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-300 font-bold text-[10px]">
+            Declined
+          </span>`;
+        }
+
+        return `
+          <div class="p-4 rounded-2xl bg-slate-800/70 border ${isPending ? 'border-amber-500/50 shadow-lg shadow-amber-950/20' : 'border-slate-700/60'} transition-all space-y-3">
+            <div class="flex items-start justify-between gap-2">
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="font-mono text-[10px] font-bold text-slate-400">${order.id}</span>
+                  <span class="text-[10px] text-slate-500">• ${order.date || 'Today'}, ${order.timestamp || ''}</span>
+                </div>
+                <h5 class="text-sm font-bold text-white mt-0.5">${order.name}</h5>
+              </div>
+              <div>${statusPill}</div>
+            </div>
+
+            <!-- Student Contact & Brief -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] bg-slate-900/60 p-2.5 rounded-xl border border-slate-800">
+              <div>
+                <span class="text-slate-400 block text-[10px]">Student WhatsApp:</span>
+                <a href="https://wa.me/91${order.phone}" target="_blank" class="text-brand-300 hover:underline font-bold flex items-center gap-1">
+                  <i data-lucide="phone" class="w-3 h-3 text-emerald-400"></i> +91 ${order.phone}
+                </a>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[10px]">Email (For Deliverable):</span>
+                <span class="text-slate-200 font-mono text-[10px] truncate block">${order.email}</span>
+              </div>
+              <div class="sm:col-span-2">
+                <span class="text-slate-400 block text-[10px]">Service & Pricing:</span>
+                <span class="text-white font-semibold">${order.service} (${order.quantity} ${order.unit})</span>
+                <span class="text-slate-400"> — Total: <strong class="text-emerald-400">₹${order.total}</strong> (80% Advance: <strong class="text-brand-300">₹${order.advance}</strong>)</span>
+              </div>
+              <div class="sm:col-span-2">
+                <span class="text-slate-400 block text-[10px]">Deadline:</span>
+                <span class="text-amber-300 font-medium">${order.deadline}</span>
+              </div>
+            </div>
+
+            <!-- Topic, Subtopics & Rubric -->
+            <div class="text-[11px] space-y-1.5">
+              <p class="text-slate-200"><strong class="text-slate-400">Main Topic:</strong> <span class="font-semibold">${order.topic}</span></p>
+              ${order.subtopics ? `
+                <div class="p-2.5 rounded-xl bg-slate-900/90 border border-brand-500/20 text-slate-300 text-[11px] space-y-1">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent flex items-center gap-1">
+                    <i data-lucide="layers" class="w-3 h-3"></i> Subtopics / Key Points to Cover:
+                  </span>
+                  <p class="text-slate-200 whitespace-pre-line leading-relaxed pl-1 border-l-2 border-brand-500/40">${order.subtopics}</p>
+                </div>
+              ` : ''}
+              ${order.notes && order.notes !== 'None provided' ? `<p class="text-slate-400 text-[10px] italic bg-slate-950/40 p-2 rounded-lg border border-slate-800 line-clamp-2"><span class="font-bold text-slate-500 not-italic">Notes:</span> "${order.notes}"</p>` : ''}
+            </div>
+
+            <!-- Admin Actions -->
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-700/50">
+              <div class="flex items-center gap-2">
+                ${isPending ? `
+                  <button onclick="acceptOrder('${order.id}')" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-md flex items-center gap-1.5 transition-all">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                    <span>Accept Order (Send UPI info)</span>
+                  </button>
+                  <button onclick="declineOrder('${order.id}')" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-rose-900/40 hover:text-rose-300 text-slate-300 font-medium text-xs border border-slate-700 transition-all">
+                    Decline
+                  </button>
+                ` : isAccepted ? `
+                  <button onclick="acceptOrder('${order.id}')" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 font-semibold text-xs border border-emerald-500/30 flex items-center gap-1">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                    <span>Resend WhatsApp Acceptance</span>
+                  </button>
+                ` : `
+                  <button onclick="acceptOrder('${order.id}')" class="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs border border-slate-700">
+                    Re-open & Accept
+                  </button>
+                `}
+              </div>
+
+              <button onclick="deleteOrder('${order.id}')" class="text-slate-500 hover:text-rose-400 p-1" title="Delete record">
+                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function acceptOrder(orderId) {
+      const orders = getStoredOrders();
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      order.status = 'ACCEPTED';
+      saveStoredOrders(orders);
+      renderAdminOrders();
+
+      const acceptMsg = `*ORDER ACCEPTED BY ADMIN (Dushyant Yadav)*%0A%0A` +
+        `Hello *${order.name}*,%0A` +
+        `This is *Dushyant Yadav* (Founder & Admin at *Assignee*).%0A%0A` +
+        `✅ I have reviewed your submission details for *${order.service} (${order.quantity} ${order.unit})* on *"${order.topic}"* and *ACCEPTED* your order!%0A%0A` +
+        (order.subtopics ? `📑 *Approved Subtopics to Cover:*%0A${encodeURIComponent(order.subtopics)}%0A%0A` : '') +
+        `📌 *Order Confirmation:*%0A` +
+        `• Order Ref: ${order.id}%0A` +
+        `• Promised Deadline: ${order.deadline}%0A` +
+        `• Total Agreed Price: ₹${order.total}%0A` +
+        `• Advance (80%): *₹${order.advance}*%0A` +
+        `• Final 20% on delivery: ₹${order.total - order.advance}%0A` +
+        `• Revision terms: Flat ₹60/revision cycle%0A%0A` +
+        `💳 *UPI Advance Payment:*%0A` +
+        `• UPI ID: *${CONFIG.UPI_ID}*%0A` +
+        `• Name: *${CONFIG.ADMIN_NAME}*%0A` +
+        `• Phone (GPay / Paytm / PhonePe): *${CONFIG.ADMIN_PHONE}*%0A%0A` +
+        `Please transfer the 80% advance (*₹${order.advance}*) and share the payment screenshot here. Our specialist will immediately start drafting your project!`;
+
+      const cleanPhone = order.phone.replace(/\D/g, '');
+      const waUrl = `https://wa.me/91${cleanPhone}?text=${acceptMsg}`;
+      window.open(waUrl, '_blank');
+    }
+
+    function declineOrder(orderId) {
+      const orders = getStoredOrders();
+      const order = orders.find(o => o.id === orderId);
+      if (!order) return;
+
+      if (!confirm(`Are you sure you want to decline order ${order.id} from ${order.name}?`)) return;
+
+      order.status = 'DECLINED';
+      saveStoredOrders(orders);
+      renderAdminOrders();
+
+      const declineMsg = `*ASSIGNEE ORDER STATUS UPDATE*%0A%0A` +
+        `Hello *${order.name}*,%0A` +
+        `This is *Dushyant Yadav* from Assignee.%0A%0A` +
+        `Regarding your brief for "${order.topic}", unfortunately our creators are currently fully booked for this turnaround window and we cannot accept this order today. We apologize for the inconvenience and wish you the best with your submission!`;
+
+      const cleanPhone = order.phone.replace(/\D/g, '');
+      if (confirm("Would you like to send a polite decline message to the student on WhatsApp?")) {
+        const waUrl = `https://wa.me/91${cleanPhone}?text=${declineMsg}`;
+        window.open(waUrl, '_blank');
+      }
+    }
+
+    function deleteOrder(orderId) {
+      if (!confirm("Delete this order record from your queue?")) return;
+      let orders = getStoredOrders();
+      orders = orders.filter(o => o.id !== orderId);
+      saveStoredOrders(orders);
+      renderAdminOrders();
+    }
+
+    function showAdminLiveBanner(order) {
+      const banner = document.getElementById('admin-live-banner');
+      const bannerText = document.getElementById('admin-banner-text');
+      const bannerSub = document.getElementById('admin-banner-sub');
+
+      if (bannerText) bannerText.textContent = `${order.name}: ${order.service} (₹${order.total})`;
+      if (bannerSub) bannerSub.textContent = `Topic: ${order.topic.slice(0, 45)}... • Advance: ₹${order.advance}`;
+
+      if (banner) banner.classList.remove('hidden');
+
+      playNotificationChime();
+
+      // Native browser notification if permitted
+      if ("Notification" in window && Notification.permission === "granted") {
+        try {
+          new Notification("🚨 New Order Brief Received!", {
+            body: `${order.name} submitted ${order.service} (₹${order.total}) for approval.`,
+            icon: "favicon.ico"
+          });
+        } catch (e) {}
+      }
+    }
+
+    function dismissAdminBanner() {
+      const banner = document.getElementById('admin-live-banner');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    function openAdminDrawer() {
+      renderAdminOrders();
+      const drawer = document.getElementById('admin-drawer');
+      if (drawer) drawer.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeAdminDrawer() {
+      const drawer = document.getElementById('admin-drawer');
+      if (drawer) drawer.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function requestDesktopNotification() {
+      if (!("Notification" in window)) {
+        alert("This browser does not support desktop notifications.");
+        return;
+      }
+      Notification.requestPermission().then(perm => {
+        if (perm === "granted") {
+          alert("Browser alerts activated! You will receive a desktop ping when an order is received.");
+        } else {
+          alert("Notifications were disabled or dismissed.");
+        }
+      });
+    }
+
+    function simulateTestOrder() {
+      const mockNames = ['Priya Sharma', 'Rohan Mehta', 'Sneha Kapoor', 'Vikram Sen', 'Ananya Gupta'];
+      const mockTopics = [
+        'Fintech Disruption in Rural Microfinance Banking',
+        'Machine Learning for Real-Time Sensor Fault Detection',
+        'International Business Strategy: EV Market Entry in ASEAN',
+        'Comparative Constitutional Law: Right to Privacy'
+      ];
+      const mockSubtopicsMap = {
+        'Fintech Disruption in Rural Microfinance Banking': '1. Digital Micro-credit Trends\n2. UPI & AePS Penetration\n3. Default Rates Comparison\n4. Policy Recommendations for RBI',
+        'Machine Learning for Real-Time Sensor Fault Detection': '1. Sensor Telemetry Overview\n2. Autoencoder Anomaly Detection\n3. Edge Hardware Benchmarks\n4. Latency vs Accuracy Tradeoffs',
+        'International Business Strategy: EV Market Entry in ASEAN': '1. PESTEL Analysis of Indonesia & Thailand\n2. Battery Supply Chain Logistics\n3. Tariff Structures & Joint Ventures\n4. 5-Year Financial Projections',
+        'Comparative Constitutional Law: Right to Privacy': '1. Evolution of Privacy Jurisprudence\n2. Puttaswamy vs Union of India\n3. Comparison with GDPR (EU Article 8)\n4. State Surveillance Safeguards'
+      };
+
+      const randomName = mockNames[Math.floor(Math.random() * mockNames.length)];
+      const randomTopic = mockTopics[Math.floor(Math.random() * mockTopics.length)];
+      const randomSubtopics = mockSubtopicsMap[randomTopic] || '1. Introduction\n2. Literature Review\n3. Case Analysis\n4. Conclusion';
+      const randomPages = 3 + Math.floor(Math.random() * 3);
+      const isPpt = Math.random() > 0.5;
+      const rate = isPpt ? CONFIG.SLIDE_RATE : CONFIG.PAGE_RATE;
+      const total = randomPages * rate;
+      const advance = Math.round(total * CONFIG.ADVANCE_RATIO);
+
+      const newOrder = {
+        id: 'ORD-' + Math.floor(10000 + Math.random() * 90000),
+        name: randomName,
+        phone: '98' + Math.floor(10000000 + Math.random() * 90000000),
+        email: randomName.toLowerCase().replace(' ', '.') + '@college.edu',
+        topic: randomTopic,
+        subtopics: randomSubtopics,
+        notes: 'Strict format, citations required. Admin review requested.',
+        service: isPpt ? 'PPT Slide Deck' : 'Text Assignment',
+        quantity: randomPages,
+        unit: isPpt ? 'slides' : 'pages',
+        total: total,
+        advance: advance,
+        deadline: 'In 3 Days at 18:00',
+        date: 'Today',
+        timestamp: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }),
+        status: 'PENDING'
+      };
+
+      const orders = getStoredOrders();
+      orders.unshift(newOrder);
+      saveStoredOrders(orders);
+      renderAdminOrders();
+      showAdminLiveBanner(newOrder);
+    }
+
+    function handleOrderSubmission(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('cust-name').value;
+      const phone = document.getElementById('cust-phone').value;
+      const email = document.getElementById('cust-email').value;
+      const topic = document.getElementById('cust-topic').value;
+      const subtopics = document.getElementById('cust-subtopics').value || "None provided";
+      const notes = document.getElementById('cust-notes').value || "None provided";
+
+      const serviceName = state.serviceType === 'assignment' ? 'Text Assignment' : 'PPT Slide Deck';
+      const unit = state.serviceType === 'assignment' ? 'pages' : 'slides';
+
+      const orderId = 'ORD-' + Math.floor(10000 + Math.random() * 90000);
+
+      const newOrder = {
+        id: orderId,
+        name: name,
+        phone: phone,
+        email: email,
+        topic: topic,
+        subtopics: subtopics,
+        notes: notes,
+        service: serviceName,
+        quantity: state.quantity,
+        unit: unit,
+        total: state.totalPrice,
+        advance: state.advancePrice,
+        deadline: state.deadlineFormatted,
+        date: 'Today',
+        timestamp: new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }),
+        status: 'PENDING'
+      };
+
+      // 1. Save to in-website admin database (localStorage)
+      const orders = getStoredOrders();
+      orders.unshift(newOrder);
+      saveStoredOrders(orders);
+
+      // 2. Trigger live in-website notification chime & banner for Admin
+      renderAdminOrders();
+      showAdminLiveBanner(newOrder);
+
+      // 3. Prepare client WhatsApp brief to Dushyant Yadav (+91 9772223152)
+      const msg = `*🚨 NEW ASSIGNEE ORDER - APPROVAL REQUIRED*%0A%0A` +
+        `*Dear Admin (Dushyant Yadav), a student has submitted an assignment brief for your acceptance:*%0A%0A` +
+        `🆔 *Order ID:* ${orderId}%0A` +
+        `👤 *Student Name:* ${name}%0A` +
+        `📱 *WhatsApp Phone:* %2B91 ${phone}%0A` +
+        `📧 *Delivery Email:* ${email}%0A` +
+        `📚 *Service:* ${serviceName} (${state.quantity} ${unit})%0A` +
+        `📝 *Main Topic:* ${topic}%0A` +
+        `📑 *Subtopics / Key Points:*%0A${encodeURIComponent(subtopics)}%0A%0A` +
+        `⏰ *Target Deadline:* ${state.deadlineFormatted}%0A` +
+        `💰 *Estimated Total:* ₹${state.totalPrice}%0A` +
+        `💳 *80% Advance Due Upon Acceptance:* ₹${state.advancePrice}%0A` +
+        `🔄 *Revision Terms:* Flat ₹60/revision noted%0A%0A` +
+        `📌 *Guidelines/Rubric:*%0A${encodeURIComponent(notes)}%0A%0A` +
+        `👉 *ADMIN ACTION:* Review brief in the on-site Admin Desk or reply to student on WhatsApp with *'ACCEPTED'* (with UPI details for ₹${state.advancePrice}) or *'DECLINED'*.`;
+
+      const waUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${msg}`;
+
+      closeOrderModal();
+
+      setTimeout(() => {
+        alert(`Order ${orderId} submitted for Admin Review!\n\nAdmin Dushyant Yadav has been notified on the website.\nClick OK to open WhatsApp and share your brief with Admin directly.`);
+        window.open(waUrl, '_blank');
+      }, 250);
+    }
+
+    function openCreatorModal() {
+      document.getElementById('creator-modal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+
+    function closeCreatorModal() {
+      document.getElementById('creator-modal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    function handleCreatorApplication(e) {
+      e.preventDefault();
+      const name = document.getElementById('cr-name').value;
+      const college = document.getElementById('cr-college').value;
+      const year = document.getElementById('cr-year').value;
+      const phone = document.getElementById('cr-phone').value;
+      const skill = document.getElementById('cr-skill').value;
+      const sample = document.getElementById('cr-sample').value;
+
+      const msg = `*NEW CREATOR APPLICATION - ASSIGNEE*%0A%0A` +
+        `👤 *Name:* ${name}%0A` +
+        `🏛️ *College:* ${college} (${year})%0A` +
+        `📱 *WhatsApp:* ${phone}%0A` +
+        `🎯 *Specialty:* ${skill}%0A` +
+        `📂 *Portfolio / Drive Sample:* ${encodeURIComponent(sample)}`;
+
+      const waUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${msg}`;
+      window.open(waUrl, '_blank');
+
+      alert("Application recorded! Please hit send in WhatsApp to submit your portfolio to the verification desk.");
+      closeCreatorModal();
+    }
+
+    // Interactive Sample Gallery Logic
+    function switchSampleCategory(cat) {
+      document.querySelectorAll('.sample-card').forEach(el => el.classList.add('hidden'));
+      
+      const tabIds = ['ppt-business', 'ppt-tech', 'text-econ', 'text-ev'];
+      tabIds.forEach(id => {
+        const btn = document.getElementById(`sample-tab-${id}`);
+        if (btn) {
+          btn.className = 'px-4 py-2 rounded-xl text-xs font-semibold border border-slate-800 bg-slate-900/60 text-slate-400 hover:text-white hover:border-slate-700 transition-all flex items-center gap-1.5';
+        }
+      });
+
+      const activeCard = document.getElementById(`sample-card-${cat}`);
+      if (activeCard) activeCard.classList.remove('hidden');
+
+      const activeTab = document.getElementById(`sample-tab-${cat}`);
+      if (activeTab) {
+        activeTab.className = 'px-4 py-2 rounded-xl text-xs font-bold border border-brand-500 bg-brand-500/20 text-brand-300 transition-all flex items-center gap-1.5 shadow-glow-indigo';
+      }
+      lucide.createIcons();
+    }
+
+    let currentBizSlide = 1;
+    const totalBizSlides = 4;
+
+    function showBizSlide(num) {
+      if (num < 1) num = 1;
+      if (num > totalBizSlides) num = totalBizSlides;
+      currentBizSlide = num;
+
+      for (let i = 1; i <= totalBizSlides; i++) {
+        const slide = document.getElementById(`biz-slide-${i}`);
+        if (slide) {
+          if (i === num) {
+            slide.classList.remove('hidden');
+          } else {
+            slide.classList.add('hidden');
+          }
+        }
+      }
+
+      const counter = document.getElementById('biz-slide-num');
+      if (counter) counter.textContent = `Slide ${num} of ${totalBizSlides}`;
+      lucide.createIcons();
+    }
+
+    function nextBizSlide() {
+      if (currentBizSlide < totalBizSlides) {
+        showBizSlide(currentBizSlide + 1);
+      } else {
+        showBizSlide(1);
+      }
+    }
+
+    function prevBizSlide() {
+      if (currentBizSlide > 1) {
+        showBizSlide(currentBizSlide - 1);
+      } else {
+        showBizSlide(totalBizSlides);
+      }
+    }
+  </script>
+</body>
+</html>
