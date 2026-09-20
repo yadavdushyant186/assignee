@@ -75,12 +75,8 @@ const CONFIG = {
 
 ---
 
-## 🌐 Deploy to GitHub Pages (Separate Repo)
-
-1. Create a new GitHub repository named `assignee`.
-2. Push the contents of `C:\assignee` to your new repository.
-3. Turn on **GitHub Pages** under repository **Settings** > **Pages** (`main` branch, `/ root`).
-4. Your site will be live at:
-   ```text
-   https://<your-username>.github.io/assignee/
-   ```
+## 🌐 Live Website & Repository
+* **Live Website:** [https://yadavdushyant186.github.io/assignee/](https://yadavdushyant186.github.io/assignee/)
+* **GitHub Repository:** [https://github.com/yadavdushyant186/assignee](https://github.com/yadavdushyant186/assignee)
+* **Antigravity IDE Folder:** [`c:\nutrish\assignee`](file:///c:/nutrish/assignee)
+* **Local Web Server:** `http://localhost:8080`
