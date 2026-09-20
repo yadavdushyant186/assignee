@@ -10,7 +10,7 @@ Assignee is a 100% independent academic assistance & presentation design platfor
 
 ## 💰 Official Pricing & Operating Rules
 
-* **Text Assignments:** **₹120 / page** (180–200 words, single-spaced, 12pt font). **Minimum: 2 pages.**
+* **Text Assignments:** **₹110 / page** (200–220 words, single-spaced, 12pt font). **Minimum: 2 pages.**
 * **PowerPoint Presentations (PPT):** **₹80 / slide** (custom visual design, charts, speaker notes). **Minimum: 3 slides.**
 * **Revisions:** Flat **₹20 every time** a post-delivery revision is requested.
 * **Strict Lead-Time & Page Turnaround Caps:**
@@ -61,7 +61,7 @@ In [`index.html`](file:///C:/assignee/index.html):
 const CONFIG = {
   ADMIN_NAME: "Dushyant Yadav",
   ADMIN_PHONE: "9772223152",
-  PAGE_RATE: 120,          // ₹120 per page
+  PAGE_RATE: 110,          // ₹110 per page
   SLIDE_RATE: 80,          // ₹80 per slide
   REVISION_RATE: 20,       // ₹20 flat per revision
   RUSH_MULTIPLIER: 1.5,
