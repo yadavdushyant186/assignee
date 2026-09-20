@@ -12,7 +12,7 @@ Assignee is a 100% independent academic assistance & presentation design platfor
 
 * **Text Assignments:** **₹120 / page** (180–200 words, single-spaced, 12pt font). **Minimum: 2 pages.**
 * **PowerPoint Presentations (PPT):** **₹80 / slide** (custom visual design, charts, speaker notes). **Minimum: 3 slides.**
-* **Revisions:** Flat **₹60 every time** a post-delivery revision is requested.
+* **Revisions:** Flat **₹20 every time** a post-delivery revision is requested.
 * **Strict Lead-Time & Page Turnaround Caps:**
   - **Minimum Notice:** All orders must be placed at least **2 days (48 hours)** before the deadline.
   - **2-Day Turnaround:** Maximum **5 pages** accepted.
@@ -63,7 +63,7 @@ const CONFIG = {
   ADMIN_PHONE: "9772223152",
   PAGE_RATE: 120,          // ₹120 per page
   SLIDE_RATE: 80,          // ₹80 per slide
-  REVISION_RATE: 60,       // ₹60 flat per revision
+  REVISION_RATE: 20,       // ₹20 flat per revision
   RUSH_MULTIPLIER: 1.5,
   RUSH_THRESHOLD_HOURS: 20,
   MIN_NOTICE_HOURS: 4,
